@@ -1,0 +1,42 @@
+@Java
+method completeMaze()
+{
+  while (!isJeroo(AHEAD) && !(isFlower(LEFT) && isWater(AHEAD) && isFlower(RIGHT)))
+  {
+    if (isNet(AHEAD) || isWater(AHEAD) || (isFlower(AHEAD) && (isClear(RIGHT) || isClear(LEFT))))
+    {
+      turn(RIGHT);
+      if (isNet(AHEAD) || isWater(AHEAD) || (isFlower(LEFT) && isClear(AHEAD) && isFlower(RIGHT)))
+      {
+        turn(LEFT);
+        turn(LEFT);
+      }
+    }
+    hop();
+  }
+}
+@@
+// Lab 5B
+// 9/11/12
+
+// using FindingBetty.jev
+
+// starting from 1, 0, progress spiral to Betty
+
+// bonus: have Barney go back to start
+// bonus 2: have Betty follow him back
+// use one method only
+      
+      
+method main()
+{
+  Jeroo Barney = new Jeroo(1, 0);
+  Jeroo Betty = new Jeroo(12, 11, WEST);
+    
+  Barney.completeMaze();
+  Barney.turn(RIGHT);
+  Barney.turn(RIGHT);
+  Barney.completeMaze();
+  
+  Betty.completeMaze();
+}

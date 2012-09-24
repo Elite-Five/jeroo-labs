@@ -1,0 +1,29 @@
+@Java
+
+@@
+// Lab 1B
+// 9/10/12
+
+// using FencedIn.jev
+
+// progress to end of net maze
+   
+method main()
+{
+   Jeroo Joey = new Jeroo();
+   Joey.turn(RIGHT);
+   Joey.hop();
+   Joey.turn(LEFT);
+   Joey.hop(2);
+
+   while(!(Joey.isNet(AHEAD) && Joey.isNet(LEFT) && Joey.isNet(RIGHT)))
+   {
+      Joey.turn(RIGHT);
+      Joey.hop();
+      if (!Joey.isNet(LEFT) && Joey.isNet(RIGHT))
+      {
+         Joey.turn(LEFT);
+         Joey.hop();
+      }
+   }
+}

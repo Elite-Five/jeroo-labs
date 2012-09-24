@@ -1,0 +1,55 @@
+@Java
+
+@@
+// Lab 1C
+// 9/10/12
+
+// using default map
+
+method main()
+{
+  Jeroo Joey = new Jeroo(0, 11, 46);
+    
+  while(!Joey.isWater(AHEAD))
+  {
+    Joey.turn(RIGHT);
+    Joey.hop();
+    Joey.turn(LEFT);
+    Joey.hop();
+    Joey.plant();
+  }
+
+  Joey.turn(RIGHT);
+  Joey.turn(RIGHT);
+  
+  while(!Joey.isWater(LEFT))
+  {
+    Joey.turn(LEFT);
+    Joey.hop();
+    Joey.turn(RIGHT);
+    Joey.hop();
+    Joey.plant();
+  }
+  
+  Joey.turn(RIGHT);
+  
+  while(!Joey.isWater(LEFT))
+  {
+    Joey.turn(LEFT);
+    Joey.hop();
+    Joey.turn(RIGHT);
+    Joey.hop();
+    Joey.plant();
+  }
+  
+  Joey.turn(RIGHT);
+  
+  while(!Joey.isWater(LEFT))
+  {
+    Joey.turn(LEFT);
+    Joey.hop();
+    Joey.turn(RIGHT);
+    Joey.hop();
+    Joey.plant();
+  }
+}

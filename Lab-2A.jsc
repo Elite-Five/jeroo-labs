@@ -1,0 +1,45 @@
+@Java
+method surroundWithFlowers()
+{
+  while (!isFlower(HERE))
+  {
+    plant();
+    hop();
+    if (!isWater(RIGHT))
+      turn(RIGHT);
+  }
+}
+@@
+// Lab 2A
+// 9/10/12
+
+// using WaterHazzards.jev
+
+method main()
+{
+  Jeroo Joey = new Jeroo(1, 1, 32);
+  Jeroo Jumper = new Jeroo(8, 1, 32);
+  Jeroo Billabong = new Jeroo(15, 1, 64);
+  Jeroo Stickybeak = new Jeroo(8, 15, 16);
+  
+  Joey.surroundWithFlowers();
+  Joey.hop(12);
+  Joey.surroundWithFlowers();
+  
+  Jumper.surroundWithFlowers();
+  Jumper.hop(6);
+  Jumper.turn(LEFT);
+  Jumper.hop(3);
+  Jumper.turn(RIGHT);
+  Jumper.surroundWithFlowers();
+  
+  Billabong.surroundWithFlowers();
+  Billabong.hop(5);
+  Billabong.surroundWithFlowers();
+  Billabong.hop(5);
+  Billabong.surroundWithFlowers();
+  Billabong.hop(5);
+  Billabong.surroundWithFlowers();
+  
+  Stickybeak.surroundWithFlowers();
+}

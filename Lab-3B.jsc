@@ -1,0 +1,39 @@
+@Java
+method moveToNextRow()
+{
+   if (isFacing(EAST))
+   {
+      turn(RIGHT);
+      hop();
+      turn(RIGHT);
+   }
+   else if (isFacing(WEST))
+   {
+      turn(LEFT);
+      hop();
+      turn(LEFT);
+   }
+   pick();
+}
+
+method cleanUp()
+{
+   while(!(isWater(AHEAD) && isWater(LEFT) && isFacing(WEST)))
+   {
+      pick();
+      if (isWater(AHEAD))
+         moveToNextRow();
+      hop();
+   }
+}
+@@
+// Lab 3C
+
+// using Pinball.jev
+
+method main()
+{
+   Jeroo Joey = new Jeroo(0, 0);
+   
+   Joey.cleanUp();
+}

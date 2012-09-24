@@ -1,0 +1,82 @@
+@Java
+method pickFlower()
+{
+   if (isFlower(LEFT))
+   {
+      turn(LEFT);
+      hop();
+      pick();
+      turn(RIGHT);
+      turn(RIGHT);
+      hop();
+      turn(LEFT);
+   }
+   else if (isFlower(RIGHT))
+   {
+      turn(RIGHT);
+      hop();
+      pick();
+      turn(LEFT);
+      turn(LEFT);
+      hop();
+      turn(RIGHT);
+   }
+}
+
+method removeNet()
+{
+   if (isNet(LEFT))
+   {
+      turn(LEFT);
+      toss();
+      turn(RIGHT);
+   }
+   else if (isNet(RIGHT))
+   {
+      turn(RIGHT);
+      toss();
+      turn(LEFT);
+   }
+}
+
+method protectWater()
+{
+   if (isClear(LEFT))
+   {
+      turn(LEFT);
+      hop();
+      turn(RIGHT);
+      if (isWater(AHEAD))
+         plant();
+      turn(RIGHT);
+      turn(RIGHT);
+      if (isWater(AHEAD))
+         plant();
+      turn(LEFT);
+      hop();
+      turn(RIGHT);
+   }
+}   
+
+method safen()
+{
+   while (!(isWater(AHEAD) && isClear(RIGHT)))
+   {
+      pickFlower();
+      pickFlower();
+      removeNet();
+      removeNet();
+      protectWater();
+      protectWater();
+      
+      if (!(isWater(AHEAD) || isNet(AHEAD)))
+         hop();
+   }
+}
+@@
+method main()
+{
+   Jeroo Joey = new Jeroo(1, 0);
+   
+   Joey.safen();
+}

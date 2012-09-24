@@ -1,0 +1,24 @@
+@Java
+method completeMaze()
+{
+   while (!(isWater(AHEAD) && isWater(RIGHT)))
+   {
+      if (!isClear(AHEAD))
+         turn(RIGHT);   
+      hop();
+   }
+}
+@@
+// Lab 5A
+// 9/11/12
+
+// using FlowerMazeIsland.jev
+
+// starting from 1, 0, progress spiral to center
+
+method main()
+{
+  Jeroo Joey = new Jeroo(1, 0);
+  
+  Joey.completeMaze();
+}

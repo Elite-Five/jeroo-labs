@@ -1,0 +1,32 @@
+@Java
+method progressMaze()
+{
+   if (isWater(LEFT) && isWater(AHEAD) && isWater(RIGHT))
+   {
+      turn(RIGHT);
+      turn(RIGHT);
+   }
+   while (!(isWater(LEFT) && isWater(AHEAD) && isWater(RIGHT)))
+   {
+      if (isWater(AHEAD))
+         turn(RIGHT);
+      if (isWater(AHEAD))
+      {
+         turn(LEFT);
+         turn(LEFT);
+      }
+      hop();
+   }
+}
+@@
+// Lab 4A
+
+// using SpiralIsland1-3.jev
+
+method main()
+{
+   Jeroo Joey = new Jeroo(0, 0);
+   
+   Joey.progressMaze(); // spiral in
+   Joey.progressMaze(); // spiral out
+}

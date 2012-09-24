@@ -1,0 +1,22 @@
+@Java
+method surroundWithFlowers()
+{
+   while(!isFlower(AHEAD))
+   {
+      if (isWater(AHEAD))
+         turn(RIGHT);
+      plant();
+      hop();
+   }
+}
+@@
+// Lab 4D
+
+// using blank
+
+method main()
+{
+   Jeroo Joey = new Jeroo(92);
+   
+   Joey.surroundWithFlowers();
+}

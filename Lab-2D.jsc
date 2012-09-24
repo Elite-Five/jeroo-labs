@@ -1,0 +1,30 @@
+@Java
+method go()
+{
+  while(isClear(AHEAD))
+  {
+    plant();
+    hop();
+  }
+}
+@@
+// Lab 2D
+// 9/11/2012
+
+// using blank island
+
+// border entire island with flowers
+// bonus: use a Jeroo per side
+
+method main()
+{
+  Jeroo Joey = new Jeroo(23);
+  Jeroo Billabong = new Jeroo(0, 23, SOUTH, 23);
+  Jeroo Jumper = new Jeroo(23, 23, WEST, 23);
+  Jeroo Stickybeak = new Jeroo(23, 0, NORTH, 23);
+  
+  Joey.go();
+  Billabong.go();
+  Jumper.go();
+  Stickybeak.go();
+}

@@ -1,0 +1,28 @@
+@Java
+
+@@
+// Lab 1A
+// 9/10/2012
+
+// using KnockDownTheFences.jev
+  
+method main() {
+   Jeroo Joey = new Jeroo();
+   
+   Joey.hop(4);
+   Joey.pick();
+   Joey.hop();
+   Joey.toss();
+   
+   Joey.hop(5);
+   Joey.pick();
+   Joey.hop();
+   Joey.toss();
+   
+   Joey.hop(4);
+   Joey.pick();
+   Joey.hop();
+   Joey.toss();
+   
+   Joey.hop(7);
+}

@@ -1,0 +1,687 @@
+@Java
+method reset()
+{
+  // move 3 units over
+  turn(RIGHT);
+  if (!isWater(AHEAD))
+  {
+    hop();
+    if (!isWater(AHEAD))
+    {
+      hop();
+      if (!isWater(AHEAD))
+      {
+        hop();
+      }    
+    }
+  }
+  
+  // if at end of row, reset to next
+  hop(2);
+  if (isWater(AHEAD))
+  {
+    turn(RIGHT);
+    hop(7);
+    if (!isWater(AHEAD))
+    {
+      hop();
+    }
+    turn(RIGHT);
+    hop(23);
+    turn(RIGHT);
+    turn(RIGHT);
+  }
+  else
+  {
+     turn(RIGHT);
+     turn(RIGHT);
+     hop(2);
+     turn(RIGHT);
+     turn(RIGHT);
+  }
+}
+
+method plantFlower()
+{
+   if (!isFlower(HERE))
+      plant();
+}
+  
+method drawZero()
+{
+   if (!isWater(RIGHT))
+   {
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      
+      turn(RIGHT);
+      
+      hop(4);
+      turn(LEFT);
+      
+      reset();
+   }
+}
+
+method drawOne()
+{
+  if (!isWater(RIGHT))
+  {
+    hop(4);
+    turn(RIGHT);
+    
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    
+    turn(RIGHT);
+    turn(RIGHT);
+    hop(7);
+    
+    reset();
+  }
+}
+
+method drawTwo()
+{
+  if (!isWater(RIGHT))
+  {
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(LEFT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(LEFT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+ 
+    turn(LEFT);
+    hop(6);
+    
+    reset();
+  }
+}
+
+method drawThree()
+{
+   if (!isWater(RIGHT))
+   {
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(LEFT);
+    turn(LEFT);
+    hop(4);
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    turn(RIGHT);
+    hop(4);
+    
+    turn(LEFT);
+    hop(6);
+    
+    reset();
+   }
+}
+
+method drawFour()
+{
+   if (!isWater(RIGHT))
+   {
+      turn(RIGHT);
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      turn(LEFT);
+
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+   
+      turn(LEFT);
+      
+      hop(3);
+      
+      turn(RIGHT);
+      turn(RIGHT);
+      
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      
+      turn(RIGHT);
+      turn(RIGHT);
+      hop(7);
+      
+      reset();
+   }
+}
+
+method drawFive()
+{
+   if (!isWater(RIGHT))
+   {
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+      
+    turn(RIGHT);
+    turn(RIGHT);
+    
+    hop(4);
+  
+    turn(LEFT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(LEFT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    
+    turn(RIGHT);
+    
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+    hop();
+    plantFlower();
+ 
+    turn(LEFT);
+    turn(LEFT);
+    hop(4);
+    
+    turn(LEFT);
+    
+    hop(6);
+      reset();
+   }
+}
+
+method drawSix()
+{
+   if (!isWater(RIGHT))
+   {
+      plantFlower();
+      hop();  
+      plantFlower();
+      hop();  
+      plantFlower();
+      hop();  
+      plantFlower();
+      hop();  
+      plantFlower();
+      
+      turn(RIGHT);
+      turn(RIGHT);
+      hop(4);
+      turn(LEFT);
+      
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+     
+      turn(LEFT);
+      
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      
+      turn(LEFT);
+      
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      
+      turn(LEFT);
+      
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      hop();
+      plantFlower(); 
+      
+      turn(RIGHT);
+      turn(RIGHT);
+      
+      hop(4);
+      
+      turn(LEFT);
+      
+      hop(3);
+      
+      reset();
+   }
+}
+
+method drawSeven()
+{
+   if (!isWater(RIGHT))
+   {
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      
+      turn(RIGHT);
+      turn(RIGHT);
+      hop(6);
+      
+      reset();
+   }
+}
+
+method drawEight()
+{
+   if (!isWater(RIGHT))
+   {
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop(); 
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+      hop(); 
+      plantFlower();
+        
+      turn(RIGHT);
+      turn(RIGHT);
+      
+      hop(3);
+      
+      turn(LEFT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      
+      turn(LEFT);
+      
+      hop(3);
+      
+      reset();
+   }
+}
+
+method drawNine()
+{
+   if (!isWater(RIGHT))
+   {
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      turn(RIGHT);
+      
+      hop(3);
+      
+      turn(LEFT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      hop();
+      plantFlower();
+      
+      turn(RIGHT);
+      
+      hop(4);
+      
+      turn(LEFT);
+      
+      reset();
+   }
+}
+@@
+// Lab 2C
+// 9/11/12
+
+// using default map
+
+// draw 5x7 digits with flowers
+  
+method main()
+{
+  Jeroo Joey = new Jeroo(216);
+  // 315 as maximum needed for 5x7
+  // 207 as maximum for characters (3x3 of 8 (31))
+  // 131 used to complete 571316891
+  
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+  Joey.drawEight();
+   
+  Joey.drawFive();
+  Joey.drawSeven();
+  Joey.drawOne();
+  
+  Joey.drawThree();
+  Joey.drawOne();
+  Joey.drawSix();
+  
+  Joey.drawEight();
+  Joey.drawNine();
+  Joey.drawOne();
+  Joey.drawEight();
+}

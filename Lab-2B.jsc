@@ -1,0 +1,90 @@
+@Java
+// face and open the starting gates
+method prepare()
+{
+  turn(LEFT);
+  toss();
+}
+
+// progress Jeroo through entire maze section
+method completeMaze()
+{
+  hop(2);
+  turn(RIGHT);
+  hop();
+  turn(LEFT);
+  hop(2);
+  
+  while(!isWater(AHEAD))
+  {
+    turn(LEFT);
+    hop();
+    turn(RIGHT);
+    hop();
+  }
+  
+  turn(RIGHT);
+  hop(3);
+  
+  while(!(!isNet(AHEAD) && !isNet(RIGHT)))
+  {
+    turn(RIGHT);
+    hop();
+    turn(LEFT);
+    hop();
+  }
+  
+  hop();
+  turn(LEFT);
+  hop(2);
+  
+  while(!isWater(AHEAD))
+  {
+    turn(LEFT);
+    hop();
+    turn(RIGHT);
+    hop();
+  }
+  
+  turn(RIGHT);
+  hop(3);
+  
+  while(!(!isNet(AHEAD) && !isNet(RIGHT)))
+  {
+    turn(RIGHT);
+    hop();
+    turn(LEFT);
+    hop();
+  }
+  
+  hop();
+  turn(LEFT);
+  hop(2);
+  turn(RIGHT);
+  hop(2);
+  turn(LEFT);
+}
+@@
+// Lab 2B
+// 9/10/12
+
+// using GreatEscape.jev
+
+// progress all Jeroos thru respective maze
+  
+method main()
+{
+  Jeroo Stickybeak = new Jeroo(13, 10, WEST, 1);
+  Jeroo Jumper = new Jeroo(13, 13, SOUTH, 1);
+  Jeroo Billabong = new Jeroo(10, 13, EAST, 1);
+  Jeroo Joey = new Jeroo(10, 10, NORTH, 1);
+  
+  Stickybeak.prepare();
+  Stickybeak.completeMaze();
+  Jumper.prepare();
+  Jumper.completeMaze();
+  Billabong.prepare();
+  Billabong.completeMaze();
+  Joey.prepare();
+  Joey.completeMaze();
+}
