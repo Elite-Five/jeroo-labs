@@ -1,0 +1,71 @@
+@Java
+method goToRing()
+{
+   hop(4);
+   turn(RIGHT);
+   hop(3);
+   turn(LEFT);
+}
+method clearRing()
+{
+   while (!(isFlower(HERE) && isNet(LEFT)))
+   {
+      if (isFlower(HERE) && isNet(RIGHT))
+      {
+         pick();
+         turn(RIGHT);
+         toss();
+         turn(LEFT);
+      }
+      else if (isClear(AHEAD) && isClear(RIGHT))
+      {
+         turn(RIGHT);
+         hop();
+      }
+      else if (isFlower(RIGHT) && isClear(AHEAD))
+         turn(RIGHT);
+         
+      if (!isNet(AHEAD))
+         hop();
+   }
+   
+   while (!(isClear(AHEAD) && isClear(LEFT)))
+   {
+      if (isFlower(HERE) && isNet(LEFT))
+      {
+         pick();
+         turn(LEFT);
+         toss();
+         turn(RIGHT);
+      }
+      else if (isFlower(LEFT) && isClear(AHEAD))
+         turn(LEFT);
+      if (!isNet(AHEAD))
+         hop();
+   }
+}
+
+method run()
+{
+   while (!isFacing(EAST))
+      turn(RIGHT);
+      
+   while (!isWater(AHEAD))
+      hop();
+}
+@@
+method main()
+{
+   Jeroo Angela = new Jeroo();
+   Jeroo Friend1 = new Jeroo(10, 11);
+   Jeroo Friend2 = new Jeroo(13, 12);
+   Jeroo Friend3 = new Jeroo(15, 9);
+
+   Angela.goToRing();
+   Angela.clearRing();
+   
+   Angela.run();
+   Friend1.run();
+   Friend2.run();
+   Friend3.run();
+}
