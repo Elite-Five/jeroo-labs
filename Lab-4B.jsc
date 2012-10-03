@@ -48,17 +48,49 @@ method protectWater()
       turn(RIGHT);
       if (isWater(AHEAD))
          plant();
+      if (!isWater(AHEAD))
+      {
+         turn(RIGHT);
+         turn(RIGHT);
+         if (isWater(AHEAD))
+            plant();
+      }
+      else
+      {
+         turn(RIGHT);
+         turn(RIGHT);
+      }
+      turn(LEFT);
+      hop();
+      turn(LEFT);
+   }
+   
+   else if (isClear(RIGHT))
+   {
       turn(RIGHT);
-      turn(RIGHT);
+      hop();
+      turn(LEFT);
       if (isWater(AHEAD))
          plant();
-      turn(LEFT);
+      if (!isWater(AHEAD))
+      {
+         turn(LEFT);
+         turn(LEFT);
+         if (isWater(AHEAD))
+            plant();
+      }
+      else
+      {
+         turn(LEFT);
+         turn(LEFT);
+      }
+      turn(RIGHT);
       hop();
       turn(RIGHT);
    }
 }   
 
-method safen()
+method safenIsland()
 {
    while (!(isWater(AHEAD) && isClear(RIGHT)))
    {
@@ -74,9 +106,11 @@ method safen()
    }
 }
 @@
+// using AlleyRunIsland.jev
+
 method main()
 {
-   Jeroo Joey = new Jeroo(1, 0);
+   Jeroo Joey = new Jeroo(1, 0, 11);
    
-   Joey.safen();
+   Joey.safenIsland();
 }

@@ -48,37 +48,61 @@ method rescuePrincess1()
    
 method rescuePrincess2()
 {
-   hop(2);
-   turn(RIGHT);
-   
-   hopUntilWater();
+   while (!isJeroo(AHEAD))
+   {
+      hop(2);
+      turn(RIGHT);
       
-   turn(RIGHT);
-   turn(RIGHT);
-   hop();
-   turn(RIGHT);
+      hopUntilWater();
+         
+      turn(RIGHT);
+      turn(RIGHT);
+      hop();
+      turn(RIGHT);
+      
+      hopUntilNet();
+      
+      toss();
+      hop();
+      turn(LEFT);
+      
+      hopUntilWater();
+      
+      turn(LEFT);
+      hop();
+      turn(RIGHT);
+      hop(2);
+      turn(RIGHT);
+      hop();
+      turn(LEFT);
+      
+      hopUntilNet();      
    
-   hopUntilNet();
-   
-   toss();
-   hop();
-   turn(LEFT);
-   
-   hopUntilWater();
-   
-   turn(LEFT);
-   hop();
-   turn(RIGHT);
-   hop(2);
-   turn(RIGHT);
-   hop();
-   turn(LEFT);
-   
-   hopUntilNet();      
+      toss();
+      hop();
+   }
+}
 
-   toss();
-   hop();
-   
+method rescuePrincess3()
+{
+   while (!isJeroo(AHEAD))
+   {
+      if (isWater(AHEAD))
+         turn(RIGHT);
+      else if (isFlower(AHEAD))
+         turn(RIGHT);
+      else if (isNet(AHEAD))
+      {
+         turn(RIGHT);
+         hop();
+         turn(LEFT);
+         pick();
+         toss();
+         hop();
+      }
+      else
+         hop();
+   }
 }
 @@
 // Lab 5C
@@ -99,13 +123,24 @@ method rescuePrincess2()
 //  Prince.rescuePrincess1();
 //} 
 
-// PrincessIsland2
+//// PrincessIsland2
+//method main()
+//{
+//   Jeroo Prince = new Jeroo(1,0,EAST,2);
+//   Jeroo Guide1 = new Jeroo(1,6,EAST);
+//   Jeroo Guide2 = new Jeroo(17,1,SOUTH);
+//   Jeroo Princess = new Jeroo(1,15,SOUTH);
+//   
+//   Prince.rescuePrincess2();
+//}
+
+// PrincessIsland3
 method main()
 {
    Jeroo Prince = new Jeroo(1,0,EAST,2);
-   Jeroo Guide1 = new Jeroo(1,6,EAST);
-   Jeroo Guide2 = new Jeroo(17,1,SOUTH);
-   Jeroo Princess = new Jeroo(1,15,SOUTH);
-   
-   Prince.rescuePrincess2();
+   Jeroo Guide1 = new Jeroo(23,7,EAST);
+   Jeroo Guide2 = new Jeroo(2,5,SOUTH);
+   Jeroo Princess = new Jeroo(3,1,SOUTH);
+
+   Prince.rescuePrincess3();
 }

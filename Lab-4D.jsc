@@ -1,12 +1,13 @@
 @Java
 method surroundWithFlowers()
 {
+   plant();
    while(!isFlower(AHEAD))
    {
       if (isWater(AHEAD))
          turn(RIGHT);
-      plant();
       hop();
+      plant();
    }
 }
 @@
