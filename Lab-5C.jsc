@@ -112,16 +112,16 @@ method rescuePrincess3()
 
 // move prince to princess
 
-//// PrincessIsland1
-//method main()
-//{
-//  Jeroo Prince = new Jeroo(1,0,EAST,2);
-//  Jeroo Guide1 = new Jeroo(15,2,EAST);
-//  Jeroo Guide2 = new Jeroo(11,8,SOUTH);
-//  Jeroo Princess = new Jeroo(19,13,WEST);
-//  
-//  Prince.rescuePrincess1();
-//} 
+// PrincessIsland1
+method main()
+{
+  Jeroo Prince = new Jeroo(1,0,EAST,2);
+  Jeroo Guide1 = new Jeroo(15,2,EAST);
+  Jeroo Guide2 = new Jeroo(11,8,SOUTH);
+  Jeroo Princess = new Jeroo(19,13,WEST);
+  
+  Prince.rescuePrincess1();
+} 
 
 //// PrincessIsland2
 //method main()
@@ -133,14 +133,14 @@ method rescuePrincess3()
 //   
 //   Prince.rescuePrincess2();
 //}
-
-// PrincessIsland3
-method main()
-{
-   Jeroo Prince = new Jeroo(1,0,EAST,2);
-   Jeroo Guide1 = new Jeroo(23,7,EAST);
-   Jeroo Guide2 = new Jeroo(2,5,SOUTH);
-   Jeroo Princess = new Jeroo(3,1,SOUTH);
-
-   Prince.rescuePrincess3();
-}
+//
+//// PrincessIsland3
+//method main()
+//{
+//   Jeroo Prince = new Jeroo(1,0,EAST,2);
+//   Jeroo Guide1 = new Jeroo(23,7,EAST);
+//   Jeroo Guide2 = new Jeroo(2,5,SOUTH);
+//   Jeroo Princess = new Jeroo(3,1,SOUTH);
+//
+//   Prince.rescuePrincess3();
+//}
